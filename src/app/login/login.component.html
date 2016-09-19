@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" class="form form-horizontal" novalidate>
+  <div class="login-error" *ngIf="logInError">Wrong login or password</div>
+  <div class="form-group">
+    <label class="input-label" for="login">Login</label>
+    <input type="text" class="input-text"
+           [ngClass]="{'error': loginForm.controls.login.touched && (loginForm.controls.login.hasError('pattern') || loginForm.controls.login.hasError('required'))}"
+           id="login" name="login" formControlName="login">
+    <div class="input-error"
+         *ngIf="(loginForm.controls.login.hasError('pattern') && !loginForm.controls.login.hasError('required')) && loginForm.controls.login.touched">
+      * English letters only
+    </div>
+    <div class="input-error" *ngIf="loginForm.controls.login.hasError('required') && loginForm.controls.login.touched">* empty</div>
+  </div>
+  <div class="form-group">
+    <label class="input-label" for="password">Password</label>
+    <input type="password" class="input-text"
+           [ngClass]="{'error': loginForm.controls.password.touched && (loginForm.controls.password.hasError('pattern') || loginForm.controls.password.hasError('required'))}"
+           id="password" name="password" formControlName="password">
+    <div class="input-error"
+         *ngIf="(loginForm.controls.password.hasError('pattern') && !loginForm.controls.password.hasError('required')) && loginForm.controls.password.touched">English letters
+      and numbers only
+    </div>
+    <div class="input-error" *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.password.touched">* empty</div>
+  </div>
+  <div class="form-group">
+    <div class="input-label"></div>
+    <button type="button" class="btn" [disabled]="!loginForm.valid" (click)="login(loginForm.controls.login.value, loginForm.controls.password.value)">Enter</button>
+  </div>
+</form>

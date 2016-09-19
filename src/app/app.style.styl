@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -10,8 +9,9 @@ body {
   box-sizing: border-box;
 }
 span.active {
-  background-color: #808080;
+  background-color: gray;
 }
+
 .btn {
   padding: 5px 20px;
   background: #fff;
@@ -19,18 +19,18 @@ span.active {
   border-radius: 3px;
   color: #000;
   cursor: pointer;
-}
-.btn:hover {
-  background-color: #000;
-  color: #fff;
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
 }
 .btn[disabled] {
   color: #dedede;
   border-color: #dedede;
   cursor: not-allowed;
-}
-.btn[disabled]:hover {
-  color: #dedede;
-  border-color: #dedede;
-  background-color: #fff;
+  &:hover {
+    color: #dedede;
+    border-color: #dedede
+    background-color: #fff;
+  }
 }

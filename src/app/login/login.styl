@@ -1,0 +1,57 @@
+.form {
+  width: 420px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  &-group {
+    position: relative;
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  &-horizontal {
+    .input {
+      &-label {
+        display: table-cell;
+        margin-top: 5px;
+        padding-right: 20px;
+        float: left;
+        width: 40%;
+        text-align: right;
+      }
+      &-text {
+        display: table-cell;
+      }
+    }
+  }
+}
+
+.input {
+  $error-color = #f55;
+  &-text {
+    padding: 5px
+    border-radius: 3px;
+    border: 1px solid #aaaaaa;
+    width: 50%;
+    outline: none;
+    &.error {
+      border-color: $error-color;
+    }
+  }
+  &-error {
+    width: 200px;
+    margin: 10px 0 0 40%;
+    color: $error-color;
+  }
+}
+.login {
+  &-error {
+    margin-bottom: 20px;
+    padding: 10px 30px;
+    border: 1px solid #d3a60c;
+    border-radius: 3px;
+    background-color: #fff3d4;
+    color: #d3a60c;
+  }
+}
